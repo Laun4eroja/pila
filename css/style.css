@@ -134,7 +134,7 @@ li {
 }
 
 .header__soc a {
-    max-width: 50px;
+    max-width: 35px;
 }
 
 .header__soc a img {
@@ -428,7 +428,7 @@ li {
 .footer__socials {
     margin-bottom: 30px;
     display: flex;
-    gap: 20px 50px;
+    gap: 20px 30px;
     align-items: center;
 }
 
