@@ -41,7 +41,10 @@ button {
     cursor: pointer;
 }
 
-input, textarea, button, select {
+input,
+textarea,
+button,
+select {
     font-family: inherit;
     font-size: inherit;
     color: inherit;
@@ -85,6 +88,10 @@ li {
     color: var(--accent);
 }
 
+.no-scroll {
+    overflow-y: hidden;
+}
+
 .header {
     position: fixed;
     background-color: var(--accent);
@@ -101,11 +108,11 @@ li {
 }
 
 .header__logo {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 90px;
+    max-height: 90px;
 }
 
-.header__logo img{
+.header__logo img {
     width: 100%;
 }
 
@@ -223,6 +230,8 @@ li {
 .about__info-text p {
     position: relative;
     padding-left: 35px;
+    user-select: none;
+    z-index: 30;
 }
 
 .about__info-text p::before {
@@ -234,9 +243,8 @@ li {
     height: 30px;
     top: 2px;
     left: -2px;
+    z-index: 1;
 }
-
-
 
 /* advantages */
 
@@ -278,6 +286,7 @@ li {
     max-width: 500px;
     max-height: 300px;
 }
+
 .advantages__item-img img {
     width: 100%;
     height: 100%;
@@ -302,7 +311,7 @@ li {
     color: var(--accent);
 }
 
-.catalog__item p + p {
+.catalog__item p+p {
     margin-top: 10px;
 }
 
@@ -375,7 +384,7 @@ li {
     gap: 30px;
 }
 
-.contacts__info {   
+.contacts__info {
     width: 500px;
     border: solid 1px var(--accent);
     border-radius: 10px;
@@ -442,12 +451,12 @@ li {
     color: var(--secondary);
 }
 
-.form__group-btn {    
+.form__group-btn {
     margin-left: 0px;
     cursor: pointer;
 }
 
-.contacts__map iframe{
+.contacts__map iframe {
     max-height: 440px;
     max-width: 600px;
     border-radius: 10px;
@@ -456,11 +465,22 @@ li {
 /* footer */
 
 .footer {
+    padding: 50px 0;
     background-color: var(--accent);
 }
 
+.footer__wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer__copy {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .footer__socials {
-    margin-bottom: 30px;
     display: flex;
     gap: 20px 30px;
     align-items: center;
@@ -490,5 +510,125 @@ li {
     transition: all .2s ease-in;
 }
 
+/* agreement */
+
+.agreement {
+    padding-top: 150px;
+    padding-bottom: 60px;
+    color: var(--accent);
+}
+
+.agreement__title {
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+.agreement__text {
+    margin-bottom: 25px;
+    font-size: 24px;
+    line-height: 1.1;
+}
+
+.agreement__info p {
+    font-size: 20px;
+}
+
+.agreement__info p+p {
+    margin-top: 10px;
+}
+
+.agreement__info ul {
+    padding-left: 30px;
+    margin: 10px 0;
+}
+
+.agreement__info ul li {
+    list-style-type: disc;
+}
 
 
+
+
+
+
+
+
+
+
+
+.burger {
+    display: none;
+    width: 30px;
+    height: auto;
+    background-color: transparent;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.burger span {
+    width: 100%;
+    height: 1px;
+    background-color: var(--main);
+    transition: transform .5s, opacity .5s, background-color .5s;
+}
+
+.burger.burger--open span:nth-child(1) {
+    transform: translateY(8px) rotate(135deg);
+    background-color: var(--main);
+}
+
+.burger.burger--open span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-150%);
+    background-color: var(--main);
+}
+
+.burger.burger--open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-135deg);
+    background-color: var(--main);
+}
+
+
+
+
+
+
+@media (max-width: 1000px) {
+    .burger {
+        order: 1;
+        position: relative;
+        z-index: 101;
+        display: flex;
+    }
+
+    .menu__list {
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #000;
+        padding: 50px;
+        transform: translateY(-115%);
+        transition: transform .5s ease;
+        z-index: 50;
+    }
+
+    .menu__list.menu__list--open {
+        transform: translateY(0%);
+        height: 100vh;
+        justify-content: flex-start;
+        gap: 30px;
+        font-size: 25px;
+        z-index: 50;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__logo {
+        max-width: 70px;
+        max-height: 70px;
+    }
+}

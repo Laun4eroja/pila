@@ -1,18 +1,18 @@
-const offset = 1000;
-const scrollUp = document.querySelector('.scroll-top');
-const getTop = () => window.pageYOset || document.documentElement.scrollTop;
+const burger = document.querySelector('.burger');
+const menuMobile = document.querySelector('.menu__list');
 
-window.addEventListener('scroll', () => {
-  if (getTop() > offset) {
-    scrollUp.classList.add('scroll-top--show');
-  } else {
-    scrollUp.classList.remove('scroll-top--show');
-  }
+burger.addEventListener('click', () => {
+    menuMobile.classList.toggle('menu__list--open');
+    burger.classList.toggle('burger--open');
+    document.body.classList.toggle('no-scroll');
 });
 
-scrollUp.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
+
+const menuItem = document.querySelectorAll('.menu__list-item');
+menuItem.forEach(item => {
+    item.addEventListener('click', () => {
+        menuMobile.classList.remove('menu__list--open');
+        burger.classList.remove('burger--open');
+        document.body.classList.remove('no-scroll');
+    });
 });
