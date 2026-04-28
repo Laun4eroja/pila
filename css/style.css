@@ -735,6 +735,7 @@ li {
 
     .header__soc a {
         max-width: 30px;
+        max-height: 30px;
     }
 
     .header__logo {
@@ -811,5 +812,6 @@ li {
 @media (max-width: 380px) {
     .header__soc a {
         max-width: 25px;
+        max-height: 25px;
     }
 }
