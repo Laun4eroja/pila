@@ -228,24 +228,20 @@ li {
     font-weight: 700;
 }
 
-.about__info-text p {
-    position: relative;
-    padding-left: 35px;
-    user-select: none;
-    z-index: 30;
+.about__info-text_adv {
+    display: flex;
+    gap: 10px;
 }
 
-.about__info-text p::before {
-    position: absolute;
-    content: '';
-    background-image: url('./../images/check-mark.svg');
-    background-size: 30px 30px;
-    width: 30px;
-    height: 30px;
-    top: 2px;
-    left: -2px;
-    z-index: 1;
+.about__info-text_adv img {
+    max-width: 30px;
 }
+
+.about__info-text p {
+    user-select: none;
+}
+
+
 
 /* advantages */
 
@@ -770,6 +766,10 @@ li {
 
     .about__info-text {
         font-size: 14px;
+    }
+
+    .about__info-text_adv img {
+        max-width: 20px;
     }
 
     .section {
