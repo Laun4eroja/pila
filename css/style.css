@@ -772,12 +772,22 @@ li {
 
     .catalog__item-title,
     .order__item-title,
-    .contacts__info-title {
+    .contacts__info-title,
+    .agreement__title {
         font-size: 28px;
     }
 
+    .agreement {
+        padding-top: 120px;
+    }
+
+    .agreement__text {
+        font-size: 22px;
+    }
+
     .catalog__item p,
-    .order__item p {
+    .order__item p,
+    .agreement__info p {
         font-size: 16px;
     }
 
